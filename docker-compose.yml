@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  postgres:
+    container_name: nest-catalogo-filmes-pg
+    image: postgres
+    ports:
+      - 5555:5555
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: nest-catalogo-filmes
+      PGDATA: /data/postgres
+    volumes:
+      - ./data/pg:/data/postgres
