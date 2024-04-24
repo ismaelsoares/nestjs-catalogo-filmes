@@ -1,9 +1,24 @@
-
-POST http:localhost:3334/accounts
+# @name create_account
+POST http://127.0.0.1:3334/accounts
 Content-Type: application/json
 
 {
     "name": "Ismael Soares Doria",
-    "email": "ismaeldoria12@gmail.com",
+    "email": "ismaeldoria@gmail.com",
     "password": "123456"
 }
+
+###
+
+# @name create_movie
+POST http://127.0.0.1:3334/movies
+Content-Type: application/json
+
+{
+    "name": "Dune",
+    "genre": "Sci Fi",
+    "year": "2021",
+    "director": "Dennis Villeneuve"
+}
+
+###
