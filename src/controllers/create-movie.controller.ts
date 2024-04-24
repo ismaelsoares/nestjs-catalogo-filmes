@@ -1,4 +1,4 @@
-import { Controller, HttpCode, Post } from "@nestjs/common";
+import { Body, Controller, HttpCode, Post } from "@nestjs/common";
 import { PrismaService } from "src/prisma/prisma.service";
 
 @Controller("/movies")
@@ -7,12 +7,8 @@ export class CreateMovieController {
 
   @Post()
   @HttpCode(201)
-  async handle() {
-    const name = "Dune 2";
-    const genre = "Sci Fi";
-    const year = 2024;
-    const director = "Dennis Villeneuve";
-
+  async handle(@Body() body: any) {
+    const { name, genre, year, director } = body;
     await this.prisma.movie.create({
       data: {
         name,

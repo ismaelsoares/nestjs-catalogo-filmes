@@ -26,6 +26,6 @@ model Movie {
   id       String @id @default(uuid())
   name     String
   genre    String
-  year     Int
+  year     String
   director String
 }
