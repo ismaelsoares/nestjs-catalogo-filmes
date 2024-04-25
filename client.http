@@ -1,4 +1,5 @@
 @baseUrl = http://127.0.0.1:3334
+@authToken = {{authenticate.response.body.access_token}}
 
 # @name create_account
 POST http://127.0.0.1:3334/accounts
@@ -40,5 +41,5 @@ Content-Type: application/json
 # @name create_movie
 POST {{baseUrl}}/movies
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmMTlhYTkwNC04OTZmLTQ0ZDItYTkxYS05MGZlMzg4MzNiNjYiLCJpYXQiOjE3MTQwNTkxOTB9.I7aiYdfQImEF_Fx8cocQPYsdQub3LON9e5o06Iy25be1TO0dX_GtR2XNRNx-uX-fhVn7D2UA8fZVH63RowXRatSPAi5F6SQBPxSIpIVYFbpDMN6OgPyBQN6TI4UFlB1EDMk05X4mSdnLU7EQ-pgDKNtfZV7aQivc78vC0HfE01rHp0SOtmJLT0yPC2qjuGoDCF1La_mnp6xMSc_z2xc2SInXVsCgZC5C9nV0hnixh-hIJW2kmMf225WpTsHlILQ-WW3hwaxU4r5B_zcqk9IFNWubNQ6kJub0bL5Wwt3ctjM1kbav_yV7MNEjZBJkFTZL3_n64hxnUvPf5QHHHaniAQ
+Authorization: Bearer {{authToken}}
 ###
