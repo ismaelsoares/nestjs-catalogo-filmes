@@ -1,21 +1,13 @@
-import { Body, Controller, HttpCode, Post } from "@nestjs/common";
-import { PrismaService } from "src/prisma/prisma.service";
+import { Controller, Post, UseGuards } from "@nestjs/common";
+import { AuthGuard } from "@nestjs/passport";
 
 @Controller("/movies")
+@UseGuards(AuthGuard("jwt"))
 export class CreateMovieController {
-  constructor(private prisma: PrismaService) {}
+  constructor() {}
 
   @Post()
-  @HttpCode(201)
-  async handle(@Body() body: any) {
-    const { name, genre, year, director } = body;
-    await this.prisma.movie.create({
-      data: {
-        name,
-        genre,
-        year,
-        director,
-      },
-    });
+  async handle() {
+    return "movies ok authorized";
   }
 }
